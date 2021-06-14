@@ -5,8 +5,9 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     steps:
+    - run: echo "💡 The ${{ github.repository }} repository will be cloned to the runner."
     - uses: actions/checkout@v1
     - name: Run a one-line script
       run: ls -l
